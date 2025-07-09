@@ -53,7 +53,6 @@ class TOfU extends StatelessWidget {
             Icons.description,
             "Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy here.",
           ),
-
           buildPolicyItem(
             screenSize,
             Icons.visibility_off,
