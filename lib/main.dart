@@ -1,16 +1,16 @@
-import 'package:animal_voice_app/providers/animal_caegory_provider.dart';
-import 'package:animal_voice_app/providers/birds_provider.dart';
-import 'package:animal_voice_app/providers/farm_provider.dart';
-import 'package:animal_voice_app/providers/insect_provider.dart';
-import 'package:animal_voice_app/providers/land_animals_provider.dart';
-import 'package:animal_voice_app/providers/mammals_provider.dart';
-import 'package:animal_voice_app/providers/pet_animals_povider.dart';
-import 'package:animal_voice_app/providers/reptiles_and_amphibians_providers.dart';
-import 'package:animal_voice_app/providers/water_animals_provider.dart';
-import 'package:animal_voice_app/providers/wild_animals_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'providers/animal_caegory_provider.dart';
+import 'providers/birds_provider.dart';
+import 'providers/farm_provider.dart';
+import 'providers/insect_provider.dart';
+import 'providers/land_animals_provider.dart';
+import 'providers/mammals_provider.dart';
+import 'providers/pet_animals_provider.dart';
+import 'providers/reptiles_and_amphibians_providers.dart';
+import 'providers/water_animals_provider.dart';
+import 'providers/wild_animals_provider.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,6 @@ void main() {
         ChangeNotifierProvider(create: (context) => WildAnimalsProvider()),
         ChangeNotifierProvider(create: (context) => LandAnimalsProvider()),
         ChangeNotifierProvider(create: (context) => FarmAnimalProvider()),
-        ChangeNotifierProvider(create: (context) => PetAnimalsPovider()),
         ChangeNotifierProvider(create: (context) => PetAnimalsPovider()),
         ChangeNotifierProvider(create: (context) => InsectsProvider()),
         ChangeNotifierProvider(create: (context) => MammalsProvider()),
