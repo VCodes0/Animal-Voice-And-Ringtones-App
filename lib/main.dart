@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'providers/animal_caegory_provider.dart';
+import 'providers/animal_category_provider.dart';
 import 'providers/birds_provider.dart';
 import 'providers/farm_provider.dart';
 import 'providers/insect_provider.dart';

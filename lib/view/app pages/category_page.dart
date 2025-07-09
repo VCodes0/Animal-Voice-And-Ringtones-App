@@ -1,4 +1,4 @@
-import 'package:animal_voice_app/providers/animal_caegory_provider.dart';
+import 'package:animal_voice_app/providers/animal_category_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
