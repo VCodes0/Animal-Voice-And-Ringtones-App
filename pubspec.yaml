@@ -12,8 +12,23 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # for iOS style icons.
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.8         # iOS style icons
+
+  get: ^4.7.2                     # State management and navigation
+
+  provider: ^6.1.5                # Another state management package
+
+  dio: ^5.8.0+1                   # For making HTTP requests
+
+  shared_preferences: ^2.5.3      # For saving simple data locally
+
+  just_audio: ^0.10.4             # For playing audio files
+
+  cached_network_image: ^3.4.1    # For loading and caching images from the internet
+
+  audioplayers: ^6.5.0            # Another audio player package
+
+  flutter_cache_manager: ^3.4.1    # For caching images from the internet
 
 dev_dependencies:
   flutter_test:
