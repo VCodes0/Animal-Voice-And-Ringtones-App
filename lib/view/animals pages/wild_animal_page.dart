@@ -1,7 +1,7 @@
 import 'package:animal_voice_app/providers/wild_animals_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import '../../components/build_category_gridview.dart';
+import '../../widgets/build_category_gridview.dart';
 
 class WildAnimal extends StatefulWidget {
   const WildAnimal({super.key});

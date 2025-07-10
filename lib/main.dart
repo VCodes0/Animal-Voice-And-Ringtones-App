@@ -1,21 +1,22 @@
+import 'package:animal_voice_app/providers/music_provider.dart';
 import 'package:animal_voice_app/view/app%20pages/category_page.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'providers/animal_category_provider.dart';
-import 'providers/birds_provider.dart';
-import 'providers/farm_provider.dart';
-import 'providers/insect_provider.dart';
-import 'providers/land_animals_provider.dart';
-import 'providers/mammals_provider.dart';
-import 'providers/pet_animals_provider.dart';
 import 'providers/reptiles_and_amphibians_providers.dart';
+import 'providers/animal_category_provider.dart';
+import 'view/onboards/first_onboard_page.dart';
 import 'providers/water_animals_provider.dart';
 import 'providers/wild_animals_provider.dart';
+import 'providers/land_animals_provider.dart';
+import 'providers/pet_animals_provider.dart';
+import 'providers/mammals_provider.dart';
 import 'view/app pages/splash_page.dart';
-import 'view/onboards/first_onboard_page.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+import 'providers/insect_provider.dart';
+import 'providers/birds_provider.dart';
+import 'package:flutter/material.dart';
+import 'providers/farm_provider.dart';
+import 'package:get/get.dart';
 
 int? initScreen;
 
@@ -29,6 +30,7 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => ReptilesAndAmphibiansProvider()),
         ChangeNotifierProvider(create: (_) => AnimalCategoryProvider()),
         ChangeNotifierProvider(create: (_) => WaterAnimalsProvider()),
         ChangeNotifierProvider(create: (_) => WildAnimalsProvider()),
@@ -38,7 +40,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => InsectsProvider()),
         ChangeNotifierProvider(create: (_) => MammalsProvider()),
         ChangeNotifierProvider(create: (_) => BirdsProvider()),
-        ChangeNotifierProvider(create: (_) => ReptilesAndAmphibiansProvider()),
+        ChangeNotifierProvider(create: (_) => MusicProvider()),
       ],
       child: const MyApp(),
     ),

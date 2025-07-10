@@ -2,7 +2,7 @@ import 'package:animal_voice_app/providers/reptiles_and_amphibians_providers.dar
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/build_category_gridview.dart';
+import '../../widgets/build_category_gridview.dart';
 
 
 class ReptilesAndAmphibians extends StatefulWidget {

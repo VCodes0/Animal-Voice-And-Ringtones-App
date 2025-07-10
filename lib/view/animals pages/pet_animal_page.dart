@@ -2,7 +2,8 @@ import 'package:animal_voice_app/providers/pet_animals_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../components/build_category_gridview.dart';
+import '../../widgets/build_category_gridview.dart';
+import '../music page/music_page.dart';
 
 class PetAnimal extends StatefulWidget {
   const PetAnimal({super.key});
@@ -43,12 +44,7 @@ class _PetAnimalState extends State<PetAnimal> {
               itemBuilder: (context, index) {
                 final category = controller.getPetAnimalCategoryData[index];
                 return GestureDetector(
-                  // onTap: () {
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(builder: (context) => MusicPage()),
-                  //   );
-                  // },
+                  onTap: () {},
                   child: buildCategoryGridItem(category),
                 );
               },

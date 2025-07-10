@@ -2,7 +2,7 @@ import 'package:animal_voice_app/providers/farm_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/build_category_gridview.dart';
+import '../../widgets/build_category_gridview.dart';
 
 class FarmAnimal extends StatefulWidget {
   const FarmAnimal({super.key});

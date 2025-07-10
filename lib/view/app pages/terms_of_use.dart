@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../components/tofu.dart';
+import '../../widgets/tofu.dart';
+
 
 class TermsOfUsePage extends StatelessWidget {
   const TermsOfUsePage({super.key});

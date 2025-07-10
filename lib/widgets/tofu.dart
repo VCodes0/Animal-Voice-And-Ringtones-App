@@ -46,7 +46,7 @@ class TOfU extends StatelessWidget {
           buildPolicyItem(
             screenSize,
             Icons.block,
-            "Any type of modification to the app or its components is not allowed.",
+            "Any type of modification to the app or its widgets is not allowed.",
           ),
           buildPolicyItem(
             screenSize,

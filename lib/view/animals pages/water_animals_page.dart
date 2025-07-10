@@ -1,6 +1,6 @@
 import 'package:animal_voice_app/providers/water_animals_provider.dart';
 
-import '../../components/build_category_gridview.dart';
+import '../../widgets/build_category_gridview.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
