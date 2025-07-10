@@ -1,5 +1,7 @@
+import 'dart:developer';
+
 import 'package:animal_voice_app/model/all_animals_model.dart';
-import 'package:flutter/foundation.dart';
+import 'package:animal_voice_app/model/music_model.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
@@ -28,13 +30,10 @@ class _MusicPageState extends State<MusicPage> {
   Future<void> _init() async {
     try {
       // Replace with dynamic audio URL if available
-      final audioUrl =
-          'https://www2.cs.uic.edu/~i101/SoundFiles/CowMoo.wav'; // sample cow sound
-      await _player.setUrl(audioUrl);
+      final audioUrl = AllPosts().postAudio;
+      await _player.setUrl(audioUrl!);
     } catch (e) {
-      if (kDebugMode) {
-        print("Audio error: $e");
-      }
+      log("Audio error: $e");
     }
   }
 
