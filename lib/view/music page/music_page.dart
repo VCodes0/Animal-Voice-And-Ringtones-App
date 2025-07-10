@@ -1,10 +1,11 @@
 import 'package:animal_voice_app/model/all_animals_model.dart';
-import 'package:animal_voice_app/model/music_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+
+import '../../main.dart';
 
 class MusicPage extends StatefulWidget {
   final AllAnimals category;
@@ -56,31 +57,20 @@ class _MusicPageState extends State<MusicPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.brown),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          widget.category.catName ?? "Animal",
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            // AppBar Style
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back_ios, color: Colors.brown),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  Text(
-                    widget.category.catName ?? "Animal",
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Icon(Icons.phone_android, color: Colors.brown),
-                ],
-              ),
-            ),
-
+            SizedBox(height: mq.height * .05),
             // Image Circle
             Container(
               decoration: BoxDecoration(
@@ -89,7 +79,7 @@ class _MusicPageState extends State<MusicPage> {
               ),
               padding: const EdgeInsets.all(10),
               child: CircleAvatar(
-                radius: 80,
+                radius: 120,
                 backgroundImage: NetworkImage(widget.category.catImg ?? ''),
               ),
             ),
@@ -109,8 +99,8 @@ class _MusicPageState extends State<MusicPage> {
                     total: positionData?.duration ?? Duration.zero,
                     timeLabelTextStyle: const TextStyle(color: Colors.brown),
                     progressBarColor: Colors.brown,
-                    baseBarColor: Colors.brown.withOpacity(0.2),
-                    bufferedBarColor: Colors.orange.withOpacity(0.3),
+                    baseBarColor: Colors.brown.withValues(alpha: 0.2),
+                    bufferedBarColor: Colors.orange.withValues(alpha: 0.3),
                     thumbColor: Colors.brown,
                     onSeek: _player.seek,
                   ),
@@ -183,7 +173,7 @@ class _MusicPageState extends State<MusicPage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  'assets/images/jungle_animals.png',
+                  'assets/audio_scr_ad.png',
                   fit: BoxFit.cover,
                   height: 200,
                   width: double.infinity,
