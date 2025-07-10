@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../widgets/build_category_gridview.dart';
-import '../music page/music_page.dart';
 
 class PetAnimal extends StatefulWidget {
   const PetAnimal({super.key});

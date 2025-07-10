@@ -1,3 +1,4 @@
+import 'package:animal_voice_app/providers/all_animal_provider.dart';
 import 'package:animal_voice_app/providers/music_provider.dart';
 import 'package:animal_voice_app/view/app%20pages/category_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,6 +38,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => LandAnimalsProvider()),
         ChangeNotifierProvider(create: (_) => FarmAnimalProvider()),
         ChangeNotifierProvider(create: (_) => PetAnimalsPovider()),
+        ChangeNotifierProvider(create: (_) => AllAnimalProvider()),
         ChangeNotifierProvider(create: (_) => InsectsProvider()),
         ChangeNotifierProvider(create: (_) => MammalsProvider()),
         ChangeNotifierProvider(create: (_) => BirdsProvider()),

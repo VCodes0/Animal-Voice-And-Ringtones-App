@@ -1,4 +1,3 @@
-import 'package:animal_voice_app/model/music_model.dart';
 import 'package:animal_voice_app/view/music%20page/music_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,7 +10,7 @@ Widget buildCategoryGridItem(AllAnimals category) {
   Color labelBackgroundColor = CupertinoColors.white;
   return GestureDetector(
     onTap: () {
-      Get.to(() => MusicPage(allPosts: AllPosts(),));
+      Get.to(() => MusicPage(category: category));
     },
     child: Card(
       clipBehavior: Clip.antiAlias,
