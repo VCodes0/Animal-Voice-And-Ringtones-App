@@ -43,10 +43,7 @@ class _PetAnimalState extends State<PetAnimal> {
               itemCount: controller.getPetAnimalCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getPetAnimalCategoryData[index];
-                return GestureDetector(
-                  onTap: () {},
-                  child: buildCategoryGridItem(category),
-                );
+                return buildCategoryGridItem(category);
               },
             );
           }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../view/app pages/category_page.dart';
 import 'build_policy_item.dart';
 
 class TOfU extends StatelessWidget {
@@ -107,7 +109,7 @@ class AcceptButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Get.offAll(CategoryPage());
+        Get.offAll(() => CategoryPage());
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.brown[700],

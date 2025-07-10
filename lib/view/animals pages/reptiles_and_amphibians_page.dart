@@ -44,7 +44,7 @@ class _ReptilesAndAmphibiansState extends State<ReptilesAndAmphibians> {
               itemBuilder: (context, index) {
                 final category =
                     controller.getReptilesAmphibiansCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

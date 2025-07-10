@@ -42,7 +42,7 @@ class _WaterAnimalsState extends State<WaterAnimals> {
               itemCount: controller.getWaterAnimalsCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getWaterAnimalsCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

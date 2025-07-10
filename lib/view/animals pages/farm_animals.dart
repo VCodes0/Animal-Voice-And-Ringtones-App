@@ -42,7 +42,7 @@ class _FarmAnimalState extends State<FarmAnimal> {
               itemCount: controller.getFarmAnimalCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getFarmAnimalCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

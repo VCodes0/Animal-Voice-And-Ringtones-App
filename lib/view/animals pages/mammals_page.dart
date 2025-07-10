@@ -39,7 +39,7 @@ class _MammalsPageState extends State<MammalsPage> {
               itemCount: controller.getMammalsCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getMammalsCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

@@ -19,7 +19,7 @@ import 'providers/farm_provider.dart';
 import 'package:get/get.dart';
 
 int? initScreen;
-
+late Size mq;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mq = MediaQuery.of(context).size;
     return GetMaterialApp(
       title: "Animal Voice And Ringtone App",
       debugShowCheckedModeBanner: false,

@@ -41,7 +41,7 @@ class _WildAnimalState extends State<WildAnimal> {
               itemCount: controller.getWildAnimalCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getWildAnimalCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

@@ -39,7 +39,7 @@ class _InsectsPageState extends State<InsectsPage> {
               itemCount: controller.getInsectsCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getInsectsCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

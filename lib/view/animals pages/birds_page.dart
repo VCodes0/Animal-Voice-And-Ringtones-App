@@ -38,7 +38,7 @@ class _BirdsPageState extends State<BirdsPage> {
               itemCount: controller.getBirdsCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getBirdsCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }

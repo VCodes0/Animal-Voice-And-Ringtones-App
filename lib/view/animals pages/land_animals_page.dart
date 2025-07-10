@@ -41,7 +41,7 @@ class _LandAnimalsState extends State<LandAnimals> {
               itemCount: controller.getLandAnimalsCategoryData.length,
               itemBuilder: (context, index) {
                 final category = controller.getLandAnimalsCategoryData[index];
-                return GestureDetector(child: buildCategoryGridItem(category));
+                return buildCategoryGridItem(category);
               },
             );
           }
