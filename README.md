@@ -20,8 +20,6 @@
 
 <h2>📸 Screenshots</h2>
 
-<h2>📸 Screenshots</h2>
-
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
   <img src="https://github.com/user-attachments/assets/34c30604-d6e9-49d9-a051-f672776134d5" width="30%" alt="Screenshot 7" />
   <img src="https://github.com/user-attachments/assets/ec19b1ec-706a-47f0-b89b-fb0e3d9710a6" width="30%" alt="Screenshot 4" />
@@ -62,10 +60,10 @@
 </ul>
 
 <h4>Installation</h4>
-<pre><code>git clone https://github.com/VCodes0/Animal-Voice-And-Ringtones-App.git
-cd Animal-Voice-And-Ringtones-App
-flutter pub get
-flutter run</code></pre>
+<pre><code>git clone https://github.com/VCodes0/Animal-Voice-And-Ringtones-App.git</code></pre>
+<pre><code>cd Animal-Voice-And-Ringtones-App</code></pre>
+<pre><code>flutter pub get</code></pre>
+<pre><code>flutter run</code></pre>
 
 <hr>
 
