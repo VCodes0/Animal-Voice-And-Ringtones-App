@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:animal_app/model/all_animals_model.dart';
 import 'package:animal_app/model/music_model.dart';
+import 'package:animal_app/view/animals%20details/animals_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
@@ -165,7 +166,21 @@ class _MusicPageState extends State<MusicPage> {
                   onPressed: () => _player.seek(Duration.zero), // dummy
                   iconSize: 40,
                 ),
-                const Icon(Icons.wb_sunny_outlined, color: Colors.orange),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AnimalsDetailsPage(category: widget.category),
+                      ),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.wb_sunny_outlined,
+                    color: Colors.orange,
+                  ),
+                ),
               ],
             ),
 
