@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:animal_app/model/all_animals_model.dart';
-import 'package:animal_app/model/music_model.dart';
+import 'package:animal_app/model/animal_detail_model.dart';
 import 'package:animal_app/view/animals%20details/animals_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
@@ -13,7 +13,13 @@ import '../../main.dart';
 
 class MusicPage extends StatefulWidget {
   final AllAnimals category;
-  const MusicPage({super.key, required this.category});
+  final AnimalDetailModel animalDetail;
+
+  const MusicPage({
+    super.key,
+    required this.category,
+    required this.animalDetail,
+  });
 
   @override
   State<MusicPage> createState() => _MusicPageState();
@@ -31,11 +37,16 @@ class _MusicPageState extends State<MusicPage> {
 
   Future<void> _init() async {
     try {
-      // Replace with dynamic audio URL if available
-      final audioUrl = AllPosts().postAudio;
-      await _player.setUrl(audioUrl!);
+      final audioUrl = widget.animalDetail.postAudio;
+
+      if (audioUrl == null || audioUrl.isEmpty) {
+        log("❌ Audio URL is null or empty");
+        return;
+      }
+
+      await _player.setUrl(audioUrl);
     } catch (e) {
-      log("Audio error: $e");
+      log("❌ Audio error: $e");
     }
   }
 
@@ -72,7 +83,6 @@ class _MusicPageState extends State<MusicPage> {
         child: Column(
           children: [
             SizedBox(height: mq.height * .05),
-            // Image Circle
             Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -83,15 +93,14 @@ class _MusicPageState extends State<MusicPage> {
                 imageUrl: widget.category.catImg ?? '',
                 imageBuilder: (context, imageProvider) =>
                     CircleAvatar(radius: 120, backgroundImage: imageProvider),
-                placeholder: (context, url) => CircularProgressIndicator(),
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
                 errorWidget: (context, url, error) =>
-                    Icon(Icons.broken_image, size: 120),
+                    const Icon(Icons.broken_image, size: 120),
               ),
             ),
 
             const SizedBox(height: 30),
-
-            // Audio Progress Bar
             StreamBuilder<PositionData>(
               stream: _positionDataStream,
               builder: (context, snapshot) {
@@ -104,8 +113,8 @@ class _MusicPageState extends State<MusicPage> {
                     total: positionData?.duration ?? Duration.zero,
                     timeLabelTextStyle: const TextStyle(color: Colors.brown),
                     progressBarColor: Colors.brown,
-                    baseBarColor: Colors.brown.withValues(alpha: 0.2),
-                    bufferedBarColor: Colors.orange.withValues(alpha: 0.3),
+                    baseBarColor: Colors.brown.withAlpha(50),
+                    bufferedBarColor: Colors.orange.withAlpha(80),
                     thumbColor: Colors.brown,
                     onSeek: _player.seek,
                   ),
@@ -114,8 +123,6 @@ class _MusicPageState extends State<MusicPage> {
             ),
 
             const SizedBox(height: 30),
-
-            // Playback Controls
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -163,16 +170,19 @@ class _MusicPageState extends State<MusicPage> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.skip_next),
-                  onPressed: () => _player.seek(Duration.zero), // dummy
+                  onPressed: () => _player.seek(Duration.zero),
                   iconSize: 40,
                 ),
+
                 InkWell(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            AnimalsDetailsPage(category: widget.category),
+                        builder: (context) => AnimalsDetailsPage(
+                          category: widget.category,
+                          id: widget.category.id.toString(),
+                        ),
                       ),
                     );
                   },
@@ -186,7 +196,6 @@ class _MusicPageState extends State<MusicPage> {
 
             const Spacer(),
 
-            // Bottom Jungle Image
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
@@ -208,7 +217,6 @@ class _MusicPageState extends State<MusicPage> {
   }
 }
 
-// Helper class for progress bar
 class PositionData {
   final Duration position;
   final Duration bufferedPosition;

@@ -1,4 +1,5 @@
 import 'package:animal_app/providers/all_animal_provider.dart';
+import 'package:animal_app/providers/animal_detail_provieder.dart';
 import 'package:animal_app/providers/music_provider.dart';
 import 'package:animal_app/view/app%20pages/category_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -44,6 +45,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => MammalsProvider()),
         ChangeNotifierProvider(create: (_) => BirdsProvider()),
         ChangeNotifierProvider(create: (_) => MusicProvider()),
+        ChangeNotifierProvider(create: (_) => AnimalDetailProvider()),
       ],
       child: const MyApp(),
     ),

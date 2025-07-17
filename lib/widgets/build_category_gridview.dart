@@ -1,16 +1,34 @@
-import 'package:animal_app/view/music%20page/music_page.dart';
+import 'package:animal_app/view/music page/music_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../model/all_animals_model.dart';
+import '../model/animal_detail_model.dart';
+import '../providers/animal_detail_provieder.dart';
 
 Widget buildCategoryGridItem(AllAnimals category) {
   Color labelBackgroundColor = CupertinoColors.white;
   return GestureDetector(
-    onTap: () {
-      Get.to(() => MusicPage(category: category));
+    onTap: () async {
+      final provider = AnimalDetailProvider();
+      provider.setCategoryId(category.id.toString());
+      await provider.getAllAnimalDetails(); 
+
+      if (provider.allAni.isNotEmpty) {
+        final AnimalDetailModel detail = provider.allAni.first;
+
+        if (detail.postAudio != null && detail.postAudio!.isNotEmpty) {
+          Get.to(() => MusicPage(category: category, animalDetail: detail));
+          return;
+        }
+      }
+      Get.snackbar(
+        "Audio not available",
+        "No audio found for ${category.catName}.",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     },
     child: Card(
       clipBehavior: Clip.antiAlias,
