@@ -6,7 +6,6 @@ import '../../widgets/build_drawer_button.dart';
 import 'category_page.dart';
 import 'rate_us_page.dart';
 import 'share_page.dart';
-import 'terms_of_use.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({super.key});

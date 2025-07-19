@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../view/app pages/category_page.dart';
 import 'build_policy_item.dart';
 
 class TOfU2 extends StatelessWidget {
