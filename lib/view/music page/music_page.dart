@@ -126,7 +126,6 @@ class _MusicPageState extends State<MusicPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Icon(Icons.favorite_border, color: Colors.grey),
                 IconButton(
                   icon: const Icon(Icons.skip_previous),
                   onPressed: () => _player.seek(Duration.zero),

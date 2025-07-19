@@ -58,10 +58,17 @@ class _AnimalsDetailsPageState extends State<AnimalsDetailsPage> {
                 icon: const Icon(Icons.arrow_back_ios, color: Colors.brown),
                 onPressed: () => Navigator.pop(context),
               ),
-              title: Text(widget.category.catName ?? ''),
+              title: Text(
+                widget.category.catName ?? "Animal",
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             body: Column(
               children: [
+                SizedBox(height: mq.height * .02),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
@@ -85,6 +92,7 @@ class _AnimalsDetailsPageState extends State<AnimalsDetailsPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: mq.height * .03),
                 Expanded(
                   child: Stack(
                     children: [
@@ -100,10 +108,13 @@ class _AnimalsDetailsPageState extends State<AnimalsDetailsPage> {
                                   itemBuilder: (context, index) {
                                     final list = animal.allAni[index];
                                     return Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 8.0),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 8.0,
+                                      ),
                                       child: Text(
-                                        parseHtmlString(list.description ?? 'No description'),
+                                        parseHtmlString(
+                                          list.description ?? 'No description',
+                                        ),
                                         style: const TextStyle(fontSize: 16),
                                       ),
                                     );
@@ -111,13 +122,18 @@ class _AnimalsDetailsPageState extends State<AnimalsDetailsPage> {
                                 ),
                         ),
                       ),
+
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: SizedBox(
                           width: mq.width,
                           height: mq.height * .25,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            padding: const EdgeInsets.only(
+                              left: 16,
+                              right: 16,
+                              bottom: 20,
+                            ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.asset(

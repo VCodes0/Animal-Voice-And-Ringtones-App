@@ -1,3 +1,4 @@
+import 'package:animal_app/widgets/tofu2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -47,12 +48,6 @@ class DrawerPage extends StatelessWidget {
               right: mq.width * 0.05,
               child: Column(
                 children: [
-                  buildDrawerButton(
-                    context,
-                    icon: CupertinoIcons.heart_fill,
-                    text: "Favourites",
-                    onPressed: () {},
-                  ),
                   SizedBox(height: mq.height * 0.015),
                   buildDrawerButton(
                     context,
@@ -97,7 +92,7 @@ class DrawerPage extends StatelessWidget {
                     icon: Icons.policy,
                     text: "Terms & Conditions",
                     onTap: () {
-                      Get.to(TermsOfUsePage());
+                      Get.to(() => TOfU2(mq: mq));
                     },
                   ),
                   SizedBox(height: mq.height * 0.02),
