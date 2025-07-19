@@ -1,25 +1,24 @@
-import 'package:animal_app/providers/all_animal_provider.dart';
-import 'package:animal_app/providers/animal_detail_provieder.dart';
-import 'package:animal_app/providers/music_provider.dart';
-import 'package:animal_app/view/app%20pages/category_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'providers/reptiles_and_amphibians_providers.dart';
 import 'providers/animal_category_provider.dart';
-import 'providers/land_animals_provider.dart';
-import 'providers/pet_animals_provider.dart';
-import 'providers/mammals_provider.dart';
+import 'providers/animal_detail_provieder.dart';
 import 'providers/water_animals_provider.dart';
+import 'view/onboards/first_onboard_page.dart';
+import 'providers/land_animals_provider.dart';
 import 'providers/wild_animals_provider.dart';
+import 'providers/pet_animals_provider.dart';
+import 'providers/all_animal_provider.dart';
+import 'view/app pages/category_page.dart';
 import 'view/app pages/splash_page.dart';
+import 'providers/mammals_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'providers/insect_provider.dart';
 import 'providers/birds_provider.dart';
 import 'package:flutter/material.dart';
+import 'providers/music_provider.dart';
 import 'providers/farm_provider.dart';
 import 'package:get/get.dart';
-
-import 'view/onboards/first_onboard_page.dart';
 
 int? initScreen;
 late Size mq;
