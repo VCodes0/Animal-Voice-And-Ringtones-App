@@ -15,10 +15,7 @@ class _FarmAnimalState extends State<FarmAnimal> {
   @override
   void initState() {
     super.initState();
-    Provider.of<FarmAnimalProvider>(
-      context,
-      listen: false,
-    ).getFarmAnimalCategory();
+    context.read<FarmAnimalProvider>().getFarmAnimalCategory();
   }
 
   @override

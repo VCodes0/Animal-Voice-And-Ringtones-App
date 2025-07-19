@@ -13,18 +13,7 @@ class MusicProvider extends ChangeNotifier {
   List<AllPosts> _musicData = [];
   List<AllPosts> get musicData => _musicData;
 
-  Future<void> loadFromCache() async {
-    SharedPreferences sh = await SharedPreferences.getInstance();
-    final cachedData = sh.getString('music_data');
-    if (cachedData != null) {
-      final List<dynamic> dataDecode = jsonDecode(cachedData);
-      _musicData = AllPosts.getMusicModel(dataDecode);
-      notifyListeners();
-    }
-  }
-
   Future<void> getAnimalMusicData() async {
-    await loadFromCache(); // Load cached data first
     try {
       var response = await dio.get(url);
       if (response.statusCode == 200 && response.data != null) {
@@ -36,7 +25,6 @@ class MusicProvider extends ChangeNotifier {
       }
     } catch (e) {
       log("Error fetching pets animal : $e");
-      // If network fails, you still have cached data
     }
   }
 }

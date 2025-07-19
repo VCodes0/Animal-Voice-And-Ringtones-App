@@ -21,7 +21,6 @@ class BirdsProvider extends ChangeNotifier {
       {
         final List<dynamic> dataDecode = jsonDecode(response.data);
         _getBirdsCategoryData = AllAnimals.getAllAnimals(dataDecode);
-        // Save to SharedPreferences
         SharedPreferences sh = await SharedPreferences.getInstance();
         await sh.setString('birds_data', response.data);
         notifyListeners();

@@ -15,7 +15,7 @@ class _InsectsPageState extends State<InsectsPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<InsectsProvider>(context, listen: false).getInsectsCategory();
+    context.read<InsectsProvider>().getInsectsCategory();
   }
 
   @override

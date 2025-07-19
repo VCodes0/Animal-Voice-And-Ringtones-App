@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../main.dart';
 import '../../widgets/tofu.dart';
 
 
@@ -8,7 +9,6 @@ class TermsOfUsePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -19,13 +19,13 @@ class TermsOfUsePage extends StatelessWidget {
           "Terms of Use",
           style: TextStyle(
             color: Colors.black,
-            fontSize: screenSize.width * 0.05,
+            fontSize: mq.width * 0.05,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
       ),
-      body: TOfU(screenSize: screenSize),
+      body: TOfU(screenSize: mq),
     );
   }
 }

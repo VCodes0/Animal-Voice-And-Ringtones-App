@@ -14,7 +14,7 @@ class _BirdsPageState extends State<BirdsPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<BirdsProvider>(context, listen: false).getBirdsCategory();
+    context.read<BirdsProvider>().getBirdsCategory();
   }
 
   @override

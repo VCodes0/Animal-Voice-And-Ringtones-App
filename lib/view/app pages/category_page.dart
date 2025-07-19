@@ -38,10 +38,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<AnimalCategoryProvider>(
-      context,
-      listen: false,
-    ).getCategoryAnimalData();
+    context.read<AnimalCategoryProvider>().getCategoryAnimalData();
   }
 
   @override

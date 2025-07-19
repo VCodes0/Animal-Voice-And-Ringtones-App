@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 
+import '../../main.dart';
 import '../onboards/first_onboard_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
-   @override
+  @override
   State<SplashPage> createState() => _SplashPageState();
 }
 
@@ -23,8 +24,6 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Size mq = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(

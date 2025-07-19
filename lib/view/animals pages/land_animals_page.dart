@@ -14,10 +14,7 @@ class _LandAnimalsState extends State<LandAnimals> {
   @override
   void initState() {
     super.initState();
-    Provider.of<LandAnimalsProvider>(
-      context,
-      listen: false,
-    ).getLandAnimalsCategory();
+    context.read<LandAnimalsProvider>().getLandAnimalsCategory();
   }
 
   @override

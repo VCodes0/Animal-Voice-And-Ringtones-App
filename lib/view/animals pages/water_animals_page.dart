@@ -15,10 +15,7 @@ class _WaterAnimalsState extends State<WaterAnimals> {
   @override
   void initState() {
     super.initState();
-    Provider.of<WaterAnimalsProvider>(
-      context,
-      listen: false,
-    ).getWaterAnimalsCategory();
+    context.read<WaterAnimalsProvider>().getWaterAnimalsCategory();
   }
 
   @override

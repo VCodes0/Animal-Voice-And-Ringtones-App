@@ -15,10 +15,7 @@ class _PetAnimalState extends State<PetAnimal> {
   @override
   void initState() {
     super.initState();
-    Provider.of<PetAnimalsPovider>(
-      context,
-      listen: false,
-    ).getPetAnimalCategory();
+    context.read<PetAnimalsPovider>().getPetAnimalCategory();
   }
 
   @override

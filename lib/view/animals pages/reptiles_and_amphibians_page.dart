@@ -15,10 +15,9 @@ class _ReptilesAndAmphibiansState extends State<ReptilesAndAmphibians> {
   @override
   void initState() {
     super.initState();
-    Provider.of<ReptilesAndAmphibiansProvider>(
-      context,
-      listen: false,
-    ).getReptilesAmphibianslCategory();
+    context
+        .read<ReptilesAndAmphibiansProvider>()
+        .getReptilesAmphibianslCategory();
   }
 
   @override

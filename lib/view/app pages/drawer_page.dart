@@ -2,6 +2,7 @@ import 'package:animal_app/widgets/tofu2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../main.dart';
 import '../../widgets/build_drawer_button.dart';
 import 'category_page.dart';
 import 'rate_us_page.dart';
@@ -12,7 +13,6 @@ class DrawerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context).size;
     return Drawer(
       width: mq.width * 0.85,
       shape: const RoundedRectangleBorder(

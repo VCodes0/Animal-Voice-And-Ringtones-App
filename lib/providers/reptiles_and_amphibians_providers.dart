@@ -25,7 +25,6 @@ class ReptilesAndAmphibiansProvider extends ChangeNotifier {
         _getReptilesAmphibiansCategoryData = AllAnimals.getAllAnimals(
           dataDecode,
         );
-        // Save to SharedPreferences
         SharedPreferences sh = await SharedPreferences.getInstance();
         await sh.setString('reptiles_amphibians_data', response.data);
         notifyListeners();

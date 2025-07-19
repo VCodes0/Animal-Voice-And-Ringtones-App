@@ -14,10 +14,7 @@ class _WildAnimalState extends State<WildAnimal> {
   @override
   void initState() {
     super.initState();
-    Provider.of<WildAnimalsProvider>(
-      context,
-      listen: false,
-    ).getWildAnimalCategory();
+    context.read<WildAnimalsProvider>().getWildAnimalCategory();
   }
 
   @override

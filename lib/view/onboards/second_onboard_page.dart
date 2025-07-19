@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../main.dart';
 import 'third_onboard_page.dart';
 
 class SecondOnboardingPage extends StatelessWidget {
@@ -8,8 +9,6 @@ class SecondOnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -18,27 +17,27 @@ class SecondOnboardingPage extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            height: screenSize.height * 0.55,
+            height: mq.height * 0.55,
             child: Image.asset("assets/O23.png", fit: BoxFit.cover),
           ),
           Positioned(
-            top: screenSize.height * 0.035,
+            top: mq.height * 0.035,
             left: 0,
             right: 0,
-            height: screenSize.height * 0.7,
+            height: mq.height * 0.7,
             child: SizedBox(
               child: Center(
                 child: Image.asset(
                   "assets/O2.png",
                   fit: BoxFit.contain,
-                  width: screenSize.width * 0.8,
-                  height: screenSize.height * 0.4,
+                  width: mq.width * 0.8,
+                  height: mq.height * 0.4,
                 ),
               ),
             ),
           ),
           Positioned(
-            top: screenSize.height * 0.6,
+            top: mq.height * 0.6,
             left: 0,
             right: 0,
             child: Column(
@@ -49,21 +48,19 @@ class SecondOnboardingPage extends StatelessWidget {
                   "Set as Ringtone",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: screenSize.width * 0.065,
+                    fontSize: mq.width * 0.065,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
                 ),
-                SizedBox(height: screenSize.height * 0.02),
+                SizedBox(height: mq.height * 0.02),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: screenSize.width * 0.1,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: mq.width * 0.1),
                   child: Text(
                     "Personalize your ringtone with interesting \n animal sounds & let the symphony begin!",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: screenSize.width * 0.035,
+                      fontSize: mq.width * 0.035,
                       color: Colors.grey[700],
                     ),
                   ),
@@ -72,16 +69,13 @@ class SecondOnboardingPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: screenSize.height * 0.06,
+            bottom: mq.height * 0.06,
             left: 0,
             right: 0,
             child: Center(
               child: GestureDetector(
                 onTap: () => Get.to(() => ThirdOnboardingPage()),
-                child: Image.asset(
-                  "assets/O12.png",
-                  height: screenSize.width * 0.15,
-                ),
+                child: Image.asset("assets/O12.png", height: mq.width * 0.15),
               ),
             ),
           ),

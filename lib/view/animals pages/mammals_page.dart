@@ -15,7 +15,7 @@ class _MammalsPageState extends State<MammalsPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<MammalsProvider>(context, listen: false).getMammalsCategory();
+    context.read<MammalsProvider>().getMammalsCategory();
   }
 
   @override

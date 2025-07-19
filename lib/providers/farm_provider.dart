@@ -22,7 +22,6 @@ class FarmAnimalProvider extends ChangeNotifier {
       {
         final List<dynamic> dataDecode = jsonDecode(response.data);
         _getFarmAnimalCategoryData = AllAnimals.getAllAnimals(dataDecode);
-        // Save to SharedPreferences
         SharedPreferences sh = await SharedPreferences.getInstance();
         await sh.setString('farm_animal_data', response.data);
         notifyListeners();
